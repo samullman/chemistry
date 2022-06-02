@@ -1,8 +1,8 @@
 {
-	"name": "svelte-starter",
+	"name": "chemistry",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev -- --open",
+		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
@@ -35,6 +35,7 @@
 		"@fontsource/akshar": "^4.5.1",
 		"@fontsource/fira-mono": "^4.5.8",
 		"@fontsource/work-sans": "^4.5.10",
+		"katex": "^0.15.6",
 		"node-sass": "^7.0.1"
 	}
 }

@@ -7,13 +7,20 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocess(),
 
+	files: {
+		components: 'src/components'
+	},
 
 	kit: {
 		adapter: adapter(),
 
 		vite: {
-			server: { strictPort: false }
-		},
+			server: { strictPort: false },
+			alias: {
+				$components: 'src/components'
+			},
+
+		}
 	}
 };
 
