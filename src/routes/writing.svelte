@@ -1,12 +1,10 @@
-<script>
-	import Layout from '$lib/components/layout.svelte';
-</script>
-
 <svelte:head>
-	<title>Home</title>
+	<title>Writing</title>
 </svelte:head>
 
-<Layout>Writing</Layout>
+<h1>Writing</h1>
+
+<div>Coming soon.</div>
 
 <!-- recognize state of spirit, loving state of being, understanding state of mind -->
 <style lang="scss">

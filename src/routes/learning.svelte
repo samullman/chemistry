@@ -1,64 +1,71 @@
+<script context="module">
+	export async function load({ routeId }) {
+		return {
+			props: {
+				path: routeId
+			}
+		};
+	}
+</script>
+
 <script>
-	import Layout from '$lib/components/layout.svelte';
+	export let path;
+
+	const subjects = [
+		{
+			title: 'Math',
+			url: '/math'
+		},
+
+		{
+			title: 'Chemistry',
+			url: '/chemistry'
+		},
+
+		{
+			title: 'Physics',
+			url: '/physics'
+		},
+
+		{
+			title: 'Biology',
+			url: '/biology'
+		},
+
+		{
+			title: 'Computer Science',
+			url: '/computer-science'
+		}
+	];
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Learning</title>
 </svelte:head>
 
-<Layout>
-	<h2>
-		<a href="/math"> Math </a>
-	</h2>
+<h1>Learning</h1>
+<div>A collection of notes from various course materials.</div>
 
-	<h2>
-		<a href="/chemistry"> Chemistry </a>
-	</h2>
-</Layout>
+<div class="subjects">
+	{#each subjects as subject}
+		<h2>
+			<a href={'/' + path + subject.url}>{subject.title}</a>
+		</h2>
+	{/each}
+</div>
 
 <!-- recognize state of spirit, loving state of being, understanding state of mind -->
 <style lang="scss">
-	.element {
-		margin-bottom: 2em;
-	}
-	.title {
+	.subjects {
+		text-align: center;
+		margin: 1rem 0;
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
-	.shell {
-		margin-bottom: 1em;
-	}
-
-	p {
-		margin-top: 0;
-	}
-
-	.stats {
-		display: flex;
-		gap: 0.5em;
-	}
-
-	.valence {
-		display: flex;
-		gap: 0.5em;
-		margin-bottom: 0.25em;
-
-		.valence-electron {
-			width: 0.5em;
-			height: 0.5em;
-			border-radius: 50%;
-			background-color: #000;
-		}
-	}
-
-	.spectra {
-		width: 100%;
-		height: 5em;
-		border-radius: 0.5em;
-	}
-
-	.crystal-structure {
-		width: 6em;
+	h2 {
+		margin-bottom: 0;
+		font-size: 1.2rem;
 	}
 </style>

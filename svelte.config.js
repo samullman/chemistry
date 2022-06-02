@@ -16,10 +16,12 @@ const config = {
 
 		vite: {
 			server: { strictPort: false },
-			alias: {
-				$components: 'src/components'
-			},
 
+			resolve: {
+				alias: {
+					$components: 'src/components'
+				},
+			}
 		}
 	}
 };
