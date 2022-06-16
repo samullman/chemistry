@@ -4,35 +4,32 @@
 
 <h1 style="opacity:0;position:absolute;">About</h1>
 
-<div class="page">
-	<div class="bio">
-		<div>
-			<img src="/crossed-arms.png" />
-		</div>
+<div class="bio">
+	<div>
+		<img src="/crossed-arms.png" />
+	</div>
 
-		<div>
-			<h2>Sam Ullman</h2>
-			<p>I was born and raised in Portland, OR, USA.</p>
+	<div>
+		<h2>Sam Ullman</h2>
+		<p>I was born and raised in Portland, OR, USA.</p>
 
-			<p>
-				I attended Claremont McKenna College and nearly became a doctor before transitioning into
-				tech in 2015.
-			</p>
+		<p>
+			I attended Claremont McKenna College and nearly became a doctor before transitioning into tech
+			in 2015.
+		</p>
 
-			<p>
-				Currently – I am working with startups and various tech organizations to develop
-				cutting-edge UI/UX and integrated web technology.
-			</p>
+		<p>
+			Currently – I am working with startups and various tech organizations to develop cutting-edge
+			UI/UX and integrated web technology.
+		</p>
 
-			<p>
-				I have seven years of experience working across the stack on product, growth, and
-				communities.
-			</p>
+		<p>
+			I have seven years of experience working across the stack on product, growth, and communities.
+		</p>
 
-			<p>Based in Austin, TX, USA.</p>
+		<p>Based in Austin, TX, USA.</p>
 
-			<p>🤠</p>
-		</div>
+		<p>🤠</p>
 	</div>
 </div>
 

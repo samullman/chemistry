@@ -19,9 +19,7 @@
 <Header />
 
 <main>
-	<div class="page">
-		<slot />
-	</div>
+	<slot />
 </main>
 
 <style lang="scss">
