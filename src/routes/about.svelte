@@ -4,22 +4,35 @@
 
 <h1 style="opacity:0;position:absolute;">About</h1>
 
-<div class="bio page">
-	<div>
-		<img src="/crossed-arms.png" />
-	</div>
-
-	<div>
-		<div>Born and raised in Portland, OR, USA.</div>
-
+<div class="page">
+	<div class="bio">
 		<div>
-			Currently helping businesses and organizations develop systems and technology out of Austin,
-			TX, USA.
+			<img src="/crossed-arms.png" />
 		</div>
 
-		<p>Seven years of experience developing technology for agencies, individuals, and startups.</p>
+		<div>
+			<h2>Sam Ullman</h2>
+			<p>I was born and raised in Portland, OR, USA.</p>
 
-		<p>Based in Austin, TX.</p>
+			<p>
+				I attended Claremont McKenna College and nearly became a doctor before transitioning into
+				tech in 2015.
+			</p>
+
+			<p>
+				Currently – I am working with startups and various tech organizations to develop
+				cutting-edge UI/UX and integrated web technology.
+			</p>
+
+			<p>
+				I have seven years of experience working across the stack on product, growth, and
+				communities.
+			</p>
+
+			<p>Based in Austin, TX, USA.</p>
+
+			<p>🤠</p>
+		</div>
 	</div>
 </div>
 
@@ -28,19 +41,28 @@
 	.bio {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2rem;
+		gap: 1.6rem;
 		font-size: 1.2rem;
-		@media screen and (max-width: 32rem) {
+
+		@media screen and (max-width: 36rem) {
 			flex-direction: column;
 		}
 
 		& > div {
+			box-sizing: border-box;
 			flex: 1;
 		}
 
 		img {
 			width: 100%;
+			max-width: 31rem;
+			object-fit: cover;
+
 			border-radius: 0.75rem;
+		}
+
+		h2 {
+			margin-bottom: 1rem;
 		}
 	}
 </style>
