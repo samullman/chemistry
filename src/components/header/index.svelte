@@ -43,6 +43,7 @@
 
 	nav {
 		display: flex;
+		user-select: none;
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem;
@@ -74,6 +75,7 @@
 
 	ul {
 		list-style: none;
+
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;

@@ -51,8 +51,8 @@
 			position: absolute;
 			transform: translate(-50%, -50%) rotate(0);
 			transition: transform 1.2s ease;
-			top: calc(50% - 40px);
-			left: calc(50% - 40px);
+			top: calc(50% - 30px);
+			left: calc(50% - 0px);
 		}
 	}
 
@@ -63,6 +63,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		user-select: none;
 
 		h1 {
 			font-size: 2rem;
