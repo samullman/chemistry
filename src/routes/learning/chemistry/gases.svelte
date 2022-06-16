@@ -1,5 +1,4 @@
 <script>
-	import Katex from '$lib/components/Katex.svelte';
 	import Equations from '$lib/components/equations/chemistry/gases.svelte';
 </script>
 

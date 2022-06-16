@@ -1,5 +1,5 @@
 <script>
-	import Katex from '$lib/components/Katex.svelte';
+	import Katex from '$lib/components/katex.svelte';
 </script>
 
 <div class="equation-grid">
