@@ -2,32 +2,45 @@
 	<title>About</title>
 </svelte:head>
 
-<h1>About</h1>
-<div class="bio">
-	Born and raised in Portland, OR, USA. I was a West Coast Kid for most of my life. I went to school
-	at <a href="https://cmc.edu" target="_blank">Claremont McKenna College</a> and nearly went to
-	medical school before finding myself in a
-	<a href="https://www.appacademy.io/" target="_blank">coding bootcamp</a> in San Francisco, CA, USA.
-	After 7 years of working with agencies, startups, and entreprenuers, I'm sharing my knowledge with
-	the next generation of developers.
-</div>
+<h1 style="opacity:0;position:absolute;">About</h1>
 
-<div class="bio">
-	Currently interested in <a href="https://kit.svelte.dev/" target="_blank">Svelte</a> developerment
-	and making a lasting impact on our world! We were put here to make it a better place and I'm committed
-	to projects that do just that 😊
+<div class="bio page">
+	<div>
+		<img src="/crossed-arms.png" />
+	</div>
+
+	<div>
+		<div>Born and raised in Portland, OR, USA.</div>
+
+		<div>
+			Currently helping businesses and organizations develop systems and technology out of Austin,
+			TX, USA.
+		</div>
+
+		<p>Seven years of experience developing technology for agencies, individuals, and startups.</p>
+
+		<p>Based in Austin, TX.</p>
+	</div>
 </div>
 
 <!-- recognize state of spirit, loving state of being, understanding state of mind -->
 <style lang="scss">
 	.bio {
-		text-align: center;
-		max-width: 500px;
-
-		&:first-of-type {
-			margin-bottom: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		font-size: 1.2rem;
+		@media screen and (max-width: 32rem) {
+			flex-direction: column;
 		}
-	}
-	a {
+
+		& > div {
+			flex: 1;
+		}
+
+		img {
+			width: 100%;
+			border-radius: 0.75rem;
+		}
 	}
 </style>

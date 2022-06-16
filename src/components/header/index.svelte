@@ -1,5 +1,7 @@
 <script>
 	import { page } from '$app/stores';
+	import Modal from './modal.svelte';
+
 	export let reverse;
 
 	const links = ['about', 'ui', 'writing', 'learning'];
@@ -16,6 +18,10 @@
 					<a href={'/' + link} class:active={$page.url.pathname === '/' + link}>{link}</a>
 				</li>
 			{/each}
+
+			<li>
+				<Modal />
+			</li>
 		</ul>
 	</nav>
 </header>

@@ -10,7 +10,6 @@
 
 <script>
 	export let atom;
-	import Layout from '$lib/components/layout.svelte';
 	import atoms from '$lib/atoms.json';
 	import Atom from '$lib/components/atom.svelte';
 
@@ -18,33 +17,32 @@
 	const value = atoms[key];
 </script>
 
-<Layout>
-	<h2>{value.name}</h2>
-	<Atom {key} {value} />
-	<br />
+<h2>{value.name}</h2>
+<Atom {key} {value} />
+<br />
 
-	<div class="element">
-		<div class="shell">
-			{#each value.shells as shell, i}
-				<div class="valence">
-					{#each Array(shell) as _}
-						<span class="valence-electron" />
-					{/each}
-				</div>
-			{/each}
-		</div>
+<div class="element">
+	<div class="shell">
+		{#each value.shells as shell, i}
+			<div class="valence">
+				{#each Array(shell) as _}
+					<span class="valence-electron" />
+				{/each}
+			</div>
+		{/each}
+	</div>
 
-		<p>
-			<a href={value.source} target="_blank"> Source </a>
-		</p>
+	<p>
+		<a href={value.source} target="_blank"> Source </a>
+	</p>
 
-		<p>
-			{value.summary}
-		</p>
+	<p>
+		{value.summary}
+	</p>
 
-		<img src={value.spectral_img} class="spectra" loading="lazy" />
+	<img src={value.spectral_img} class="spectra" loading="lazy" />
 
-		<!-- <p>
+	<!-- <p>
 				<img
 					src={value.crystalStructure}
 					alt={value.crystal}
@@ -52,8 +50,7 @@
 					loading="lazy"
 				/>
 			</p> -->
-	</div>
-</Layout>
+</div>
 
 <style lang="scss">
 	h2 {
