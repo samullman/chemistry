@@ -1,6 +1,4 @@
 <script>
-	import Layout from '../components/layout.svelte';
-
 	let name = '';
 	let email = '';
 	let budget = '';
@@ -39,39 +37,38 @@
 	<title>Contact</title>
 </svelte:head>
 
-<Layout>
-	<h1>Contact</h1>
+<h1>Contact</h1>
 
-	<form action="https://formspree.io/f/mjvlkrdq" method="post" on:submit={formSubmit} class="form">
+<form action="https://formspree.io/f/mjvlkrdq" method="post" on:submit={formSubmit} class="form">
+	<div>
+		<label for="name" aria-required="true">Name</label>
 		<div>
-			<label for="name" aria-required="true">Name</label>
-			<div>
-				<input type="text" name="name" required bind:value={name} />
-			</div>
+			<input type="text" name="name" required bind:value={name} />
 		</div>
+	</div>
 
+	<div>
+		<label for="email">Email</label>
 		<div>
-			<label for="email">Email</label>
-			<div>
-				<input type="email" name="email" required bind:value={email} />
-			</div>
+			<input type="email" name="email" required bind:value={email} />
 		</div>
+	</div>
 
+	<div>
+		<label for="role">Role</label>
 		<div>
-			<label for="role">Role</label>
-			<div>
-				<input type="text" name="role" bind:value={role} />
-			</div>
+			<input type="text" name="role" bind:value={role} />
 		</div>
+	</div>
 
+	<div>
+		<label for="role">Organization</label>
 		<div>
-			<label for="role">Organization</label>
-			<div>
-				<input type="text" name="role" bind:value={organization} />
-			</div>
+			<input type="text" name="role" bind:value={organization} />
 		</div>
+	</div>
 
-		<!-- <div>
+	<!-- <div>
 					<label for="budget">Budget</label>
 					<div>
 						<select class="form-select rounded" name="budget" bind:value={budget}>
@@ -86,20 +83,19 @@
 				</div>
 			</div> -->
 
+	<div>
+		<label for="message">Message</label>
 		<div>
-			<label for="message">Message</label>
-			<div>
-				<textarea name="message" rows="3" bind:value={message} />
-			</div>
+			<textarea name="message" rows="3" bind:value={message} />
 		</div>
+	</div>
 
-		<div>
-			<button type="submit" class="btn btn-primary font-normal"> Submit </button>
-		</div>
-	</form>
+	<div>
+		<button type="submit" class="btn btn-primary font-normal"> Submit </button>
+	</div>
+</form>
 
-	<div id="form-status" />
-</Layout>
+<div id="form-status" />
 
 <style lang="scss">
 	h1 {
