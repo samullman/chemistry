@@ -10,6 +10,7 @@
 
 <script>
 	import { page } from '$app/stores';
+
 	export let path;
 
 	import Header from '../components/header/index.svelte';
@@ -38,10 +39,5 @@
 		align-items: center;
 		width: 100%;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
 	}
 </style>

@@ -1,11 +1,10 @@
-<script>
+<script lang="ts">
 	import { writable } from 'svelte/store';
 
-	let flower;
+	let flower: HTMLElement;
 	let coords = writable({ x: 50, y: 50 });
-	let size = writable(80);
 
-	function updatePos(e) {
+	function updatePos(e: any) {
 		coords.set({ x: e.clientX, y: e.clientY });
 
 		flower.style.top = e.clientY + 'px';
@@ -17,16 +16,12 @@
 	<h1>Developing for a better tomorrow.</h1>
 </div>
 
-<div
-	class="hero"
-	on:mousemove={updatePos}
-	on:mousedown={() => size.set(50)}
-	on:mouseup={() => size.set(50)}
->
+<div class="hero" on:mousemove={updatePos}>
 	<img
 		draggable="false"
 		bind:this={flower}
 		src="/flower.png"
+		alt="flower"
 		class="flower"
 		height={80}
 		width={80}
@@ -50,7 +45,7 @@
 			user-select: none;
 			position: absolute;
 			transform: translate(-50%, -50%) rotate(0);
-			transition: transform 1.2s ease;
+			transition: transform 1.2s ease, top 0.2s linear, left 0.2s linear;
 			top: calc(50% - 30px);
 			left: calc(50% - 0px);
 		}

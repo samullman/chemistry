@@ -36,7 +36,9 @@
 		"@fontsource/akshar": "^4.5.1",
 		"@fontsource/fira-mono": "^4.5.8",
 		"@fontsource/work-sans": "^4.5.10",
+		"cupertino-pane": "^1.2.91",
 		"katex": "^0.15.6",
-		"node-sass": "^7.0.1"
+		"node-sass": "^7.0.1",
+		"svelte-themer": "^0.5.5"
 	}
 }

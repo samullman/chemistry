@@ -1,44 +1,210 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import Modal from './modal.svelte';
+	import { onMount } from 'svelte';
 
-	export let reverse;
+	let myPane;
 
-	const links = ['about', 'ui', 'writing', 'learning'];
+	onMount(async () => {
+		let mod = await import('cupertino-pane');
+		let CupertinoPane = mod.CupertinoPane;
+
+		let settings = {
+			breaks: {
+				top: {
+					enabled: false
+				},
+				middle: {
+					enabled: true,
+					height: 600,
+					bounce: false
+				},
+				bottom: {
+					enabled: false
+				}
+			}
+		};
+
+		document.querySelectorAll('.cupertino-pane')[0].style.display = 'block';
+
+		myPane = new CupertinoPane('.cupertino-pane', settings);
+	});
+
+	function toggleModal() {
+		open = !open;
+	}
+
+	let open = true;
+
+	const links = [
+		{
+			title: 'Home',
+			path: '/'
+		},
+
+		{
+			title: 'Projects',
+			path: '/projects'
+		},
+
+		{
+			title: 'About',
+			path: '/about'
+		},
+
+		{
+			title: 'UI',
+			path: '/ui'
+		},
+
+		{
+			title: 'Writing',
+			path: '/writing'
+		},
+
+		{
+			title: 'Learning',
+			path: '/learning'
+		}
+	];
 </script>
 
-<header class:reverse>
-	<nav class:reverse>
-		<h3>
+<header>
+	<nav>
+		<h3 class="title">
 			<a href="/" class:active={$page.url.pathname === '/'}>samullman.com</a>
 		</h3>
-		<ul>
-			{#each links as link}
-				<li>
-					<a href={'/' + link} class:active={$page.url.pathname === '/' + link}>{link}</a>
-				</li>
-			{/each}
 
-			<li>
-				<Modal />
-			</li>
-		</ul>
+		<button on:click={toggleModal}> Sitemap </button>
 	</nav>
 </header>
 
+<div class="drawer">
+	<div class:open>
+		<div class="sitemap">
+			<ul>
+				{#each links as link}
+					<a
+						on:click={toggleModal}
+						href={link.path}
+						class:active={$page.url.pathname === link.path}
+					>
+						<li>
+							{link.title}
+						</li>
+					</a>
+				{/each}
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="cupertino-pane">
+	<h3>Sitemap</h3>
+</div>
+
 <style lang="scss">
+	// .cupertino-pane-wrapper .pane {
+	// 	width: 100vw !important;
+	// 	max-width: none !important;
+	// 	border-radius: none !important;
+	// }
+
+	.drawer {
+		& > div {
+			position: fixed;
+			bottom: 0;
+			width: 100vw;
+			background: #ffffffdd;
+			backdrop-filter: blur(5px);
+			height: 0px;
+			box-sizing: border-box;
+			transition: height 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+			opacity: 0;
+			z-index: 1000;
+
+			&.open {
+				height: 80vh;
+				box-shadow: 0 0 2rem 0.5rem #cccccc66;
+				opacity: 1;
+			}
+
+			.sitemap {
+				padding: 2rem 1rem;
+				max-width: 50rem;
+				margin: 0 auto;
+
+				ul {
+					list-style: none;
+					display: flex;
+					gap: 1rem;
+					font-size: 1.2rem;
+					margin: 0;
+					padding-left: 0;
+					flex-wrap: wrap;
+
+					$colors: (
+						'/': var(--red),
+						'/about': var(--turqoise),
+						'/ui': var(--dark-yellow),
+						'/learning': var(--green),
+						'/writing': var(--purple),
+						'/projects': var(--blue)
+					);
+
+					@each $path, $color in $colors {
+						a[href='#{$path}'] {
+							&:hover {
+								color: $color;
+
+								li {
+									border-color: $color;
+								}
+							}
+						}
+					}
+
+					a {
+						flex: calc(50% - 0.5rem);
+						display: block;
+						text-decoration: none;
+						color: black;
+						height: 100%;
+						width: 100%;
+						transition: all 0.2s ease;
+
+						&:active {
+							transform: scale(0.98);
+						}
+					}
+
+					li {
+						padding: 3rem 2rem;
+						border: 2px dashed black;
+						box-sizing: border-box;
+						border-radius: 1rem;
+						transition: border-color 0.2s ease;
+						text-align: center;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+
+	.cupertino-pane {
+		padding: 2em;
+		display: none;
+	}
+
 	header {
 		position: fixed;
 		width: 100vw;
 		top: 0;
 		left: 0;
 		background: #ffffff77;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(5px);
 		z-index: 2000;
-
-		&.reverse {
-			position: relative;
-		}
 	}
 
 	nav {
@@ -51,61 +217,11 @@
 		max-width: 52rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-
-		h3 {
-			margin-bottom: 0.5rem;
-		}
-
-		&.reverse {
-			flex-direction: column-reverse;
-
-			h3 {
-				margin-top: 0.5rem;
-			}
-
-			ul {
-				flex-direction: row-reverse;
-			}
-		}
 	}
 
-	h3 {
+	h3.title {
 		font-size: 1.3rem;
-	}
-
-	ul {
-		list-style: none;
-
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		gap: 1rem;
-		font-size: 1.2rem;
-		margin: 0;
-		padding-left: 0;
-	}
-
-	a {
-		text-decoration: none;
-		color: black;
-
-		&:hover {
-			opacity: 0.6;
-		}
-	}
-
-	$colors: (
-		'/': #e74c3c,
-		'/about': #3498db,
-		'/ui': #f1c40f,
-		'/learning': #27ae60,
-		'/writing': #8e44ad
-	);
-
-	@each $path, $color in $colors {
-		a[href='#{$path}'].active {
-			// color: $color;
-			text-decoration: underline;
-		}
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
 	}
 </style>
