@@ -44,7 +44,7 @@
 </svelte:head>
 
 <h1>Learning</h1>
-<div>A collection of notes from various course materials.</div>
+<div>The program.</div>
 
 <div class="subjects">
 	{#each subjects as subject}

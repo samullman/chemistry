@@ -2,7 +2,7 @@
 	<h1>Math</h1>
 </a>
 
-<h1>Linear Algebra</h1>
+<h1>Applied Calculus</h1>
 
 <h2>Courses</h2>
 

@@ -3,38 +3,11 @@
 	import Modal from './modal.svelte';
 	import { onMount } from 'svelte';
 
-	let myPane;
-
-	onMount(async () => {
-		let mod = await import('cupertino-pane');
-		let CupertinoPane = mod.CupertinoPane;
-
-		let settings = {
-			breaks: {
-				top: {
-					enabled: false
-				},
-				middle: {
-					enabled: true,
-					height: 600,
-					bounce: false
-				},
-				bottom: {
-					enabled: false
-				}
-			}
-		};
-
-		document.querySelectorAll('.cupertino-pane')[0].style.display = 'block';
-
-		myPane = new CupertinoPane('.cupertino-pane', settings);
-	});
-
 	function toggleModal() {
 		open = !open;
 	}
 
-	let open = true;
+	let open = false;
 
 	const links = [
 		{
@@ -84,15 +57,13 @@
 		<div class="sitemap">
 			<ul>
 				{#each links as link}
-					<a
-						on:click={toggleModal}
-						href={link.path}
-						class:active={$page.url.pathname === link.path}
-					>
-						<li>
-							{link.title}
-						</li>
-					</a>
+					<div on:click={toggleModal}>
+						<a href={link.path} class:active={$page.url.pathname === link.path}>
+							<li>
+								{link.title}
+							</li>
+						</a>
+					</div>
 				{/each}
 			</ul>
 		</div>
@@ -115,7 +86,7 @@
 			position: fixed;
 			bottom: 0;
 			width: 100vw;
-			background: #ffffffdd;
+			background: #ffffff77;
 			backdrop-filter: blur(5px);
 			height: 0px;
 			box-sizing: border-box;
@@ -125,7 +96,7 @@
 
 			&.open {
 				height: 80vh;
-				box-shadow: 0 0 2rem 0.5rem #cccccc66;
+				box-shadow: 0 0 1rem 0.5rem #cccccc66;
 				opacity: 1;
 			}
 
@@ -164,9 +135,13 @@
 						}
 					}
 
-					a {
+					& > div {
 						flex: calc(50% - 0.5rem);
+					}
+
+					a {
 						display: block;
+
 						text-decoration: none;
 						color: black;
 						height: 100%;
@@ -182,6 +157,8 @@
 						padding: 3rem 2rem;
 						border: 2px dashed black;
 						box-sizing: border-box;
+						background: #ffffffdd;
+						backdrop-filter: blur(5px);
 						border-radius: 1rem;
 						transition: border-color 0.2s ease;
 						text-align: center;
