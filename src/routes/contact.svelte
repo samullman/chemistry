@@ -5,6 +5,7 @@
 	import TwitterFill from 'svelte-remixicon/lib/icons/TwitterFill.svelte';
 	import LinkedInFill from 'svelte-remixicon/lib/icons/LinkedInFill.svelte';
 	import CalendarFill from 'svelte-remixicon/lib/icons/CalendarFill.svelte';
+	import FileList2Fill from 'svelte-remixicon/lib/icons/FileList2Fill.svelte';
 
 	const contactGrid = [
 		{
@@ -35,6 +36,12 @@
 			title: 'Calendly',
 			link: 'https://calendly.com/samullman',
 			icon: CalendarFill
+		},
+
+		{
+			title: 'Resume',
+			link: 'https://drive.google.com/file/d/1AX2jec9LUVzymzU0lWuLt9AWP_DFBw5E/view?usp=sharing',
+			icon: FileList2Fill
 		}
 	];
 
