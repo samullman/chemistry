@@ -12,8 +12,26 @@
 	}
 </script>
 
-<div class="hello">
-	<h1 class="title">Developing for a better tomorrow.</h1>
+<div class="hero">
+	<h1>Peace of mind:</h1>
+
+	<div class="items">
+		<div class="item">
+			<h2>Product</h2>
+
+			Websites, Apps, Ecommerce
+		</div>
+		<div class="item">
+			<h2>Engineering</h2>
+
+			React, Svelte, Web3
+		</div>
+		<div class="item">
+			<h2>Growth</h2>
+
+			Sales, Marketing, Relationships
+		</div>
+	</div>
 
 	<img
 		draggable="false"
@@ -28,23 +46,8 @@
 
 <style lang="scss">
 	.hero {
-		height: calc(100vh);
-		width: 100vw;
-		width: 100%;
-		position: relative;
-
-		.flower {
-			user-select: none;
-			position: absolute;
-			transform: translate(-50%, -50%) rotate(0);
-			transition: transform 1.2s ease, top 0.2s linear, left 0.2s linear;
-			top: calc(50% - 30px);
-			left: calc(50% - 0px);
-		}
-	}
-
-	.hello {
-		height: calc(100vh - 4rem);
+		margin-top: 4rem;
+		height: calc(100vh - 8rem);
 		display: flex;
 		padding: 1rem;
 		align-items: center;
@@ -52,12 +55,32 @@
 		user-select: none;
 		flex-direction: column;
 
-		.title {
-			padding: 1.5rem;
-			max-width: 20rem;
-			font-size: 2rem;
-			border: 3px dashed black;
-			border-radius: 0.75rem;
+		h1 {
+			font-size: 2.1rem;
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+
+		.items {
+			display: flex;
+			gap: 1rem;
+			margin: 1.2rem auto;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			.item {
+				padding: 1.5rem;
+				max-width: 20rem;
+				font-size: 0.9rem;
+				border: 3px dashed black;
+				border-radius: 0.75rem;
+
+				h2 {
+					font-size: 1.5rem;
+					margin-bottom: 0.5rem;
+					text-align: center;
+				}
+			}
 		}
 
 		.flower {
