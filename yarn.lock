@@ -3725,6 +3725,11 @@ svelte-preprocess@^4.0.0, svelte-preprocess@^4.10.1:
     sorcery "^0.10.0"
     strip-indent "^3.0.0"
 
+svelte-remixicon@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/svelte-remixicon/-/svelte-remixicon-1.0.1.tgz#2aec22c024b94774a3e80153e984714fcb545407"
+  integrity sha512-Jago+glcU0j5j+j9ELvl9EVEVIbYWVdxfSdi0nUUr2o9Iz75OdJRD7OSkEBeIl2Tm3n9dT4WS1eTo+2BdMviRw==
+
 svelte-themer@^0.5.5:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/svelte-themer/-/svelte-themer-0.5.5.tgz#6c93aefb1ef31756151f0a5bf2421672528fd0ef"

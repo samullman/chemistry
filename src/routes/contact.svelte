@@ -1,4 +1,43 @@
 <script>
+	import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
+	import MailFill from 'svelte-remixicon/lib/icons/MailFill.svelte';
+
+	import TwitterFill from 'svelte-remixicon/lib/icons/TwitterFill.svelte';
+	import LinkedInFill from 'svelte-remixicon/lib/icons/LinkedInFill.svelte';
+	import CalendarFill from 'svelte-remixicon/lib/icons/CalendarFill.svelte';
+
+	const contactGrid = [
+		{
+			title: 'Github',
+			link: 'https://github.com/samullman',
+			icon: GithubFill
+		},
+
+		{
+			title: 'Email',
+			link: 'mailto:samullman@gmail.com',
+			icon: MailFill
+		},
+
+		{
+			title: 'Twitter',
+			link: 'https://twitter.com/samullman',
+			icon: TwitterFill
+		},
+
+		{
+			title: 'LinkedIn',
+			link: 'https://linkedin.com/in/samullman',
+			icon: LinkedInFill
+		},
+
+		{
+			title: 'Calendly',
+			link: 'https://calendly.com/samullman',
+			icon: CalendarFill
+		}
+	];
+
 	let name = '';
 	let email = '';
 	let budget = '';
@@ -38,6 +77,21 @@
 </svelte:head>
 
 <h1>Contact</h1>
+
+<div class="contact-items">
+	{#each contactGrid as contact}
+		<a href={contact.link} target="_blank">
+			<div class="contact">
+				<div class="contact-icon">
+					<svelte:component this={contact.icon} />
+				</div>
+				<h4 class="contact-title">
+					{contact.title}
+				</h4>
+			</div>
+		</a>
+	{/each}
+</div>
 
 <form action="https://formspree.io/f/mjvlkrdq" method="post" on:submit={formSubmit} class="form">
 	<div>
@@ -99,20 +153,56 @@
 
 <style lang="scss">
 	h1 {
+		font-size: 2rem;
 		margin-top: 0em;
+		margin-bottom: 2rem;
+	}
+
+	.contact-items {
+		max-width: 32rem;
+		display: flex;
+		align-items: center;
+		margin-bottom: 1em;
+		gap: 1rem;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.contact {
+			padding: 1.5rem;
+			color: black;
+			border: 3px dashed black;
+			border-radius: 0.75rem;
+			text-align: center;
+			transition: all 0.2s ease;
+
+			&:active {
+				transform: scale(0.98);
+			}
+
+			.contact-icon {
+				font-size: 3rem;
+			}
+
+			.contact-title {
+				font-size: 1.2rem;
+				margin: 0;
+			}
+		}
 	}
 
 	.form {
+		font-size: 1rem;
 		@media screen and (max-width: 24em) {
 			width: 98%;
 		}
 
 		width: 20em;
 		display: grid;
+		display: none;
+
 		gap: 0.5em;
 
 		label {
-			font-size: 0.8em;
 			font-weight: bold;
 			display: block;
 			margin-bottom: 0.25em;

@@ -15,29 +15,39 @@
 			path: '/'
 		},
 
-		{
-			title: 'Projects',
-			path: '/projects'
-		},
+		// {
+		// 	title: 'Projects',
+		// 	path: '/projects'
+		// },
 
 		{
 			title: 'About',
 			path: '/about'
 		},
 
-		{
-			title: 'UI',
-			path: '/ui'
-		},
+		// {
+		// 	title: 'Services',
+		// 	path: '/services'
+		// },
+
+		// {
+		// 	title: 'UI',
+		// 	path: '/ui'
+		// },
+
+		// {
+		// 	title: 'Writing',
+		// 	path: '/writing'
+		// },
+
+		// {
+		// 	title: 'Learning',
+		// 	path: '/learning'
+		// },
 
 		{
-			title: 'Writing',
-			path: '/writing'
-		},
-
-		{
-			title: 'Learning',
-			path: '/learning'
+			title: 'Contact',
+			path: '/contact'
 		}
 	];
 </script>
@@ -102,7 +112,7 @@
 
 			.sitemap {
 				padding: 2rem 1rem;
-				max-width: 50rem;
+				max-width: 32rem;
 				margin: 0 auto;
 
 				ul {
@@ -113,6 +123,7 @@
 					margin: 0;
 					padding-left: 0;
 					flex-wrap: wrap;
+					overflow: scroll;
 
 					$colors: (
 						'/': var(--red),
@@ -120,7 +131,8 @@
 						'/ui': var(--dark-yellow),
 						'/learning': var(--green),
 						'/writing': var(--purple),
-						'/projects': var(--blue)
+						'/projects': var(--blue),
+						'/contact': var(--blue)
 					);
 
 					@each $path, $color in $colors {
@@ -137,6 +149,10 @@
 
 					& > div {
 						flex: calc(50% - 0.5rem);
+
+						@media screen and (max-width: 36rem) {
+							flex: 100%;
+						}
 					}
 
 					a {
@@ -154,8 +170,8 @@
 					}
 
 					li {
-						padding: 3rem 2rem;
-						border: 2px dashed black;
+						padding: 2.5rem 2rem;
+						border: 0.2rem dashed black;
 						box-sizing: border-box;
 						background: #ffffffdd;
 						backdrop-filter: blur(5px);
