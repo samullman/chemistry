@@ -1,13 +1,11 @@
 <script>
-	// import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
-	// import MailFill from 'svelte-remixicon/lib/icons/MailFill.svelte';
+	import GithubFill from 'svelte-remixicon/lib/icons/GithubFill.svelte';
+	import MailFill from 'svelte-remixicon/lib/icons/MailFill.svelte';
 
-	// import TwitterFill from 'svelte-remixicon/lib/icons/TwitterFill.svelte';
-	import LinkedInFill from 'svelte-remixicon/lib/icons/LinkedInFill.svelte';
-	// import CalendarFill from 'svelte-remixicon/lib/icons/CalendarFill.svelte';
-	// import FileList2Fill from 'svelte-remixicon/lib/icons/FileList2Fill.svelte';
-
-	import { GithubFill, MailFill, TwitterFill, CalendarFill, FileList2Fill } from 'svelte-remixicon';
+	import TwitterFill from 'svelte-remixicon/lib/icons/TwitterFill.svelte';
+	import LinkedinFill from 'svelte-remixicon/lib/icons/LinkedinFill.svelte';
+	import CalendarFill from 'svelte-remixicon/lib/icons/CalendarFill.svelte';
+	import FileList2Fill from 'svelte-remixicon/lib/icons/FileList2Fill.svelte';
 
 	const contactGrid = [
 		{
@@ -31,7 +29,7 @@
 		{
 			title: 'LinkedIn',
 			link: 'https://linkedin.com/in/samullman',
-			icon: LinkedInFill
+			icon: LinkedinFill
 		},
 
 		{
