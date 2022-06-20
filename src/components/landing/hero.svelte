@@ -13,18 +13,16 @@
 </script>
 
 <div class="hello">
-	<h1>Developing for a better tomorrow.</h1>
-</div>
+	<h1 class="title">Developing for a better tomorrow.</h1>
 
-<div class="hero" on:mousemove={updatePos}>
 	<img
 		draggable="false"
 		bind:this={flower}
 		src="/flower.png"
 		alt="flower"
 		class="flower"
-		height={80}
-		width={80}
+		height={120}
+		width={120}
 	/>
 </div>
 
@@ -34,12 +32,6 @@
 		width: 100vw;
 		width: 100%;
 		position: relative;
-
-		&:active {
-			.flower {
-				transform: translate(-50%, -50%) rotate(560deg);
-			}
-		}
 
 		.flower {
 			user-select: none;
@@ -52,16 +44,27 @@
 	}
 
 	.hello {
-		position: fixed;
-		width: 100vw;
 		height: calc(100vh - 4rem);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		user-select: none;
+		flex-direction: column;
 
-		h1 {
+		.title {
+			padding: 1.5rem;
+			max-width: 20rem;
 			font-size: 2rem;
+			border: 3px dashed black;
+			border-radius: 0.75rem;
+		}
+
+		.flower {
+			transition: 1.5s ease;
+		}
+
+		.flower:active {
+			transform: rotate(560deg);
 		}
 	}
 </style>
