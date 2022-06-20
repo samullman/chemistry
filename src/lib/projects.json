@@ -18,5 +18,12 @@
 		"url": "https://google.com",
 		"description": "A collection of digital monsters available on multiple blockchains.",
 		"image": "/projects/mons.png"
+	},
+
+	{
+		"title": "Beacon Arts Collective",
+		"url": "https://google.com",
+		"description": "Artists coming together in search of truth and getting their work out there. ",
+		"image": "/projects/flowers.jpeg"
 	}
 ]

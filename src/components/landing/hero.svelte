@@ -47,7 +47,7 @@
 <style lang="scss">
 	.hero {
 		margin-top: 4rem;
-		height: calc(100vh - 8rem);
+		min-height: calc(100vh - 8rem);
 		display: flex;
 		padding: 1rem;
 		align-items: center;
