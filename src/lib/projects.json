@@ -1,6 +1,22 @@
 [
 	{
-		"title": "The Lord of the Rings",
-		"author": "J.R.R. Tolkien"
+		"title": "My Vacancy",
+		"url": "https://google.com",
+		"description": "Vacant spaces for individuals and businesses. AirBnb meets Craiglist.",
+		"image": "/projects/vacancy.jpeg"
+	},
+
+	{
+		"title": "Farmer's Choice",
+		"url": "https://google.com",
+		"description": "A list of the best handmade, local products in the world.",
+		"image": "/projects/farmers.jpeg"
+	},
+
+	{
+		"title": "Mons",
+		"url": "https://google.com",
+		"description": "A collection of digital monsters available on multiple blockchains.",
+		"image": "/projects/mons.png"
 	}
 ]

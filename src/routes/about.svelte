@@ -116,7 +116,7 @@
 			img {
 				width: 100%;
 				object-fit: cover;
-				border: 2px dashed black;
+				border: 3px dashed black;
 				border-radius: 0.5rem;
 				box-sizing: border-box;
 				min-height: 15rem;

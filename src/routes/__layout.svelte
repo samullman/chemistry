@@ -13,7 +13,7 @@
 
 	export let path;
 
-	import Header from '../components/header/index.svelte';
+	import Header from '$lib/components/header/index.svelte';
 	import '../app.css';
 </script>
 

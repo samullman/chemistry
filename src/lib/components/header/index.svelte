@@ -15,10 +15,10 @@
 			path: '/'
 		},
 
-		// {
-		// 	title: 'Projects',
-		// 	path: '/projects'
-		// },
+		{
+			title: 'Projects',
+			path: '/projects'
+		},
 
 		{
 			title: 'About',
@@ -131,7 +131,7 @@
 						'/ui': var(--dark-yellow),
 						'/learning': var(--green),
 						'/writing': var(--purple),
-						'/projects': var(--blue),
+						'/projects': var(--yellow),
 						'/contact': var(--blue)
 					);
 
