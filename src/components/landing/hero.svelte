@@ -46,6 +46,7 @@
 	.hello {
 		height: calc(100vh - 4rem);
 		display: flex;
+		padding: 1rem;
 		align-items: center;
 		justify-content: center;
 		user-select: none;
