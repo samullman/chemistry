@@ -55,7 +55,7 @@
 <header>
 	<nav>
 		<h3 class="title">
-			<a href="/" class:active={$page.url.pathname === '/'}>samullman.com</a>
+			<a href="/" class:active={$page.url.pathname === '/'}>{$page.url.host}</a>
 		</h3>
 
 		<button on:click={toggleModal}> Sitemap </button>
