@@ -96,7 +96,7 @@
 			position: fixed;
 			bottom: 0;
 			width: 100vw;
-			background: #ffffff77;
+			background: #ffffff;
 			backdrop-filter: blur(5px);
 			height: 0px;
 			box-sizing: border-box;
@@ -195,7 +195,7 @@
 		width: 100vw;
 		top: 0;
 		left: 0;
-		background: #ffffff77;
+		background: #ffffff;
 		backdrop-filter: blur(5px);
 		z-index: 2000;
 	}
