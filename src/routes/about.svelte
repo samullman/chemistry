@@ -84,7 +84,7 @@
 
 	<div class="history">
 		{#each history as item}
-			<a href={item.link} class="item">
+			<a href={item.link} class="item" target="_blank">
 				<img src={item.image} />
 
 				<div class="title">
