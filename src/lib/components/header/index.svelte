@@ -16,11 +16,6 @@
 		},
 
 		{
-			title: 'Projects',
-			path: '/projects'
-		},
-
-		{
 			title: 'About',
 			path: '/about'
 		},
